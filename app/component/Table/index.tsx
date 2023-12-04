@@ -53,11 +53,11 @@ const renderRow = (row: INormalObject) => {
   const list = [];
   for (let key of Object.keys(row)) {
     const item = row[key];
-    if (!item.visibel) continue;
+    if (!item.visibel) list.push("");
     switch (item.type) {
       case "buttonStatus":
         list.push(
-          <td className="border border-slate-300 ">
+          <td className="border border-slate-300 pl-2">
             <Button
               className={`${
                 item.value === "Active" ? "bg-green-500" : "bg-red-500"
@@ -70,7 +70,7 @@ const renderRow = (row: INormalObject) => {
 
       case "buttonAction":
         list.push(
-          <td className="border border-slate-300 ">
+          <td className="border border-slate-300 pl-2 ">
             <Button
               className={`${item.access ? "bg-gray-700" : "bg-slate-400"}`}
               text={item.value}
@@ -80,7 +80,7 @@ const renderRow = (row: INormalObject) => {
         break;
 
       case "text":
-        list.push(<td className="border border-slate-300 ">{item.value}</td>);
+        list.push(<td className="border border-slate-300 pl-2">{item.value}</td>);
         break;
 
       case "user":
