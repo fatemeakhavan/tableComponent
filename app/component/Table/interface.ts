@@ -5,13 +5,12 @@ export interface IRows {
 }
 
  export interface ITableBaseInput {
-  headers: string[];
+  headers: {value:string , sortable:boolean}[];
   rows: any[];
 }
  
 export interface IRowsPayload {
-  value: number | string;
+  value: any;
   type: EType;
   visiable?: boolean;
-  avater?: string;
 }
