@@ -42,9 +42,6 @@ const Table = (props: ITableBaseInput) => {
   const sortTable = () => {
     let sortList = [...rows];
     sortList.sort((a, b) => {
-      console.log("a", a);
-      console.log("a[headers[sortedColumn!]]", a[headers[sortedColumn!].value]);
-      console.log("headers[sortedColumn!]", headers[sortedColumn!]);
       if (sortOrder === "ascending") {
         if (
           a[headers[sortedColumn!].value].value >
